@@ -17,7 +17,7 @@ fi
 
 # if successful, save in cache
 mkdir -p ~/docker
-docker save rotimi/jiayou-rc:latest > ~/docker/image.tar
+docker save reactioncommerce/reaction:latest > ~/docker/image.tar
 
 # run the container and wait for it to boot
 docker-compose -f .reaction/docker/docker-compose.test.yml up -d

@@ -1,7 +1,7 @@
 # used for CircleCI curl tests
 
 reaction:
-  image: rotimi/jiayou-rc:latest
+  image: reactioncommerce/reaction:latest
   links:
     - mongo
   ports:
