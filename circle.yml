@@ -28,7 +28,5 @@ deployment:
     branch: feature/140676755/setup-deployment-pipeline
     commands:
       - $JIAYOU_RC_TRIGGER
-      - docker tag rotimi/jiayou-rc:develop
-      - docker tag rotimi/jiayou-rc:$CIRCLE_BUILD_NUM
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
       - docker push rotimi/jiayou-rc:develop
