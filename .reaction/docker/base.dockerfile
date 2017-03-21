@@ -33,9 +33,10 @@ RUN cd $BUILD_SCRIPTS_DIR && \
 ONBUILD COPY . $APP_SOURCE_DIR
 
 # install Meteor, build app, clean up
-ONBUILD RUN cd $APP_SOURCE_DIR && bash $BUILD_SCRIPTS_DIR/install-meteor.sh
-ONBUILD RUN cd $APP_SOURCE_DIR && bash $BUILD_SCRIPTS_DIR/build-meteor.sh
-ONBUILD RUN cd $APP_SOURCE_DIR && bash $BUILD_SCRIPTS_DIR/post-build-cleanup.sh
+ONBUILD RUN cd $APP_SOURCE_DIR && \
+            bash $BUILD_SCRIPTS_DIR/install-meteor.sh && \
+            bash $BUILD_SCRIPTS_DIR/build-meteor.sh && \
+            bash $BUILD_SCRIPTS_DIR/post-build-cleanup.sh
 
 # set the default port that Node will listen on
 ENV PORT 80
